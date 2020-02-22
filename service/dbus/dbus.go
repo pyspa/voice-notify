@@ -4,12 +4,12 @@ import (
 	"context"
 	"encoding/json"
 	"time"
-	"voice-notify/log"
-	"voice-notify/service"
-	"voice-notify/tts"
 
 	"github.com/godbus/dbus/v5"
 	"github.com/pkg/errors"
+	"github.com/pyspa/voice-notify/log"
+	"github.com/pyspa/voice-notify/service"
+	"github.com/pyspa/voice-notify/tts"
 )
 
 type notification struct {

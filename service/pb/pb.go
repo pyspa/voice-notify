@@ -4,12 +4,12 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"voice-notify/log"
-	"voice-notify/service"
-	"voice-notify/tts"
 
 	"github.com/gorilla/websocket"
 	"github.com/pkg/errors"
+	"github.com/pyspa/voice-notify/log"
+	"github.com/pyspa/voice-notify/service"
+	"github.com/pyspa/voice-notify/tts"
 	"github.com/spf13/viper"
 )
 

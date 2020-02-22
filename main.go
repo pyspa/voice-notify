@@ -1,6 +1,6 @@
 package main
 
-import "voice-notify/cmd"
+import "github.com/pyspa/voice-notify/cmd"
 
 func main() {
 	cmd.Execute()

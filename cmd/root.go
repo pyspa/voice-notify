@@ -8,10 +8,10 @@ import (
 	"runtime"
 	"strings"
 	"syscall"
-	"voice-notify/log"
-	"voice-notify/service/dbus"
-	"voice-notify/service/pb"
 
+	"github.com/pyspa/voice-notify/log"
+	"github.com/pyspa/voice-notify/service/dbus"
+	"github.com/pyspa/voice-notify/service/pb"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

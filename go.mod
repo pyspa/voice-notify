@@ -1,4 +1,4 @@
-module voice-notify
+module github.com/pyspa/voice-notify
 
 go 1.13
 

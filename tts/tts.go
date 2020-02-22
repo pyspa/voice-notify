@@ -6,10 +6,10 @@ import (
 	"os"
 	"os/exec"
 	"sync"
-	"voice-notify/log"
 
 	texttospeech "cloud.google.com/go/texttospeech/apiv1"
 	"github.com/pkg/errors"
+	"github.com/pyspa/voice-notify/log"
 	"github.com/spf13/viper"
 	texttospeechpb "google.golang.org/genproto/googleapis/cloud/texttospeech/v1"
 )
