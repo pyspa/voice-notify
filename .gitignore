@@ -1,0 +1,4 @@
+.vscode
+.dir-locals.el
+.envrc
+voice-notify
