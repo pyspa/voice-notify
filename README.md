@@ -2,13 +2,19 @@
 
 Voice-Notify is an application that reports desktop notifications by voice.
 
-Voice-Notify tested only Linux.
+voice-notify tested only Linux.
 
 ### Features
 
 - Speak smoothly with Google Cloud Text-to-Speech
 - Support D-Bus notifications
-- Supports pushbullet notification mirroring for Android and iOS
+- Support pushbullet notification mirroring for Android and iOS
+
+### Install
+
+```
+go get -u github.com/pyspa/voice-notify
+```
 
 ### Requires
 
