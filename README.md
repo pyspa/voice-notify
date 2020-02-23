@@ -62,6 +62,9 @@ log.err_log = stderr
 [pushbullet]
 access_token = ""
 
+[http]
+addr = ":9001"
+
 ```
 
 Voice-Notify uses [viper][5].

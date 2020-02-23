@@ -11,6 +11,7 @@ import (
 
 	"github.com/pyspa/voice-notify/log"
 	"github.com/pyspa/voice-notify/service/dbus"
+	"github.com/pyspa/voice-notify/service/http"
 	"github.com/pyspa/voice-notify/service/pb"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -44,6 +45,13 @@ func start() {
 			"path": credential,
 		})
 		s := dbus.NewService()
+		go func() {
+			s.Start()
+		}()
+	}
+
+	if viper.GetString("http.addr") != "" {
+		s := http.NewService()
 		go func() {
 			s.Start()
 		}()
@@ -84,6 +92,8 @@ func initConfig() {
 	viper.SetDefault("log.debug", false)
 	viper.SetDefault("log.log", "stderr")
 	viper.SetDefault("log.err_log", "stderr")
+
+	viper.SetDefault("http.addr", ":9001")
 
 	if fileExists(cfgFile) {
 		viper.SetConfigFile(cfgFile)
