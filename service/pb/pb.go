@@ -83,7 +83,7 @@ func (s *PbService) Start() {
 }
 
 func speechMirror(ctx context.Context, mm mirrorMessage) error {
-	if err := tts.Speech(ctx, fmt.Sprintf("%sからの通知", mm.ApplicationName)); err != nil {
+	if err := tts.Speech(ctx, mm.ApplicationName); err != nil {
 		return errors.Wrap(err, "failed speech.")
 	}
 	if err := tts.Speech(ctx, mm.Title); err != nil {
