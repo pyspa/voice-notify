@@ -38,7 +38,11 @@ func start() {
 		}()
 	}
 
-	if runtime.GOOS == "linux" {
+	credential := os.Getenv("GOOGLE_APPLICATION_CREDENTIALS")
+	if runtime.GOOS == "linux" && credential != "" {
+		log.Debug("use google application credentials", log.Fields{
+			"path": credential,
+		})
 		s := dbus.NewService()
 		go func() {
 			s.Start()
