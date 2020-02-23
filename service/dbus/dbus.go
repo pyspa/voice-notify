@@ -41,7 +41,7 @@ func (s *DbusService) Start() {
 
 	c := make(chan *dbus.Message, 64)
 	conn.Eavesdrop(c)
-	log.Debug("Monitoring notifications", nil)
+	log.Info("Monitoring D-Bus notifications", nil)
 	for v := range c {
 		data, err := json.Marshal(v)
 		if err != nil {
