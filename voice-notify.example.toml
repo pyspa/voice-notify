@@ -1,0 +1,13 @@
+[speech]
+lang = "ja-JP"
+speaking_rate = 1.5
+pitch = 1.5
+text_max = 256
+
+[log]
+debug = false
+log = stderr
+log.err_log = stderr
+
+[pushbullet]
+access_token = ""
