@@ -1,0 +1,11 @@
+[Unit]
+Description=voice-notify
+
+[Service]
+Type=simple
+ExecStart=%h/go/bin/voice-notify
+Environment="GOOGLE_APPLICATION_CREDENTIALS=%h/Documents/voice-notify.json"
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
