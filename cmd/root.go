@@ -23,7 +23,7 @@ var (
 
 var rootCmd = &cobra.Command{
 	Use:     "voice-notify",
-	Version: "0.0.1",
+	Version: "0.1.0",
 	Run: func(cmd *cobra.Command, args []string) {
 		start()
 	},
