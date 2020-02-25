@@ -23,7 +23,7 @@ func Speech(ctx context.Context, text string) error {
 	mutex.Lock()
 	defer mutex.Unlock()
 
-	max := viper.GetInt("speech.text.max")
+	max := viper.GetInt("speech.text_max")
 	spText := []rune(text)
 	if len(spText) > max {
 		text = string(spText[:max])
