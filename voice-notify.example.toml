@@ -6,8 +6,8 @@ text_max = 256
 
 [log]
 debug = false
-log = stderr
-log.err_log = stderr
+log = "stderr"
+err_log = "stderr"
 
 [pushbullet]
 access_token = ""
