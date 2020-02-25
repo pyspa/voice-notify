@@ -34,7 +34,7 @@ func Speech(ctx context.Context, text string) error {
 		return errors.Wrap(err, "failed create client")
 	}
 	lang := viper.GetString("speech.lang")
-	rate := viper.GetFloat64("speech.speaking-rate")
+	rate := viper.GetFloat64("speech.speaking_rate")
 	pitch := viper.GetFloat64("speech.pitch")
 	req := texttospeechpb.SynthesizeSpeechRequest{
 		Input: &texttospeechpb.SynthesisInput{
