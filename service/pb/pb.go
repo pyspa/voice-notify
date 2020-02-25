@@ -41,6 +41,7 @@ func (s *PbService) Start() {
 	}
 	defer c.Close()
 
+	log.Info("Monitoring Pushbullet real-time event stream", nil)
 	for {
 		_, msg, err := c.ReadMessage()
 		if err != nil {

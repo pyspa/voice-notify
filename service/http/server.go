@@ -18,6 +18,11 @@ type HttpService struct {
 func (s *HttpService) Start() {
 	http.HandleFunc("/", handler)
 	addr := viper.GetString("http.addr")
+
+	log.Info("Listen local http server", log.Fields{
+		"addr": addr,
+	})
+
 	if err := http.ListenAndServe(addr, nil); err != nil {
 		log.Error(errors.Wrapf(err, "failed listen addr=%s", addr), nil)
 	}
