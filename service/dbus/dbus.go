@@ -2,7 +2,9 @@ package dbus
 
 import (
 	"context"
+	"crypto/sha1"
 	"encoding/json"
+	"fmt"
 	"time"
 
 	"github.com/godbus/dbus/v5"
@@ -42,6 +44,8 @@ func (s *DbusService) Start() {
 	c := make(chan *dbus.Message, 64)
 	conn.Eavesdrop(c)
 	log.Info("Monitoring D-Bus notifications", nil)
+
+	prevHash := ""
 	for v := range c {
 		data, err := json.Marshal(v)
 		if err != nil {
@@ -49,6 +53,12 @@ func (s *DbusService) Start() {
 			return
 		}
 		// log.Debug(string(data), nil)
+		hash := fmt.Sprintf("%x", sha1.New().Sum(data))
+		if prevHash == hash {
+			// skip
+			continue
+		}
+		prevHash = hash
 
 		var n notification
 		if err := json.Unmarshal(data, &n); err != nil {
@@ -56,6 +66,9 @@ func (s *DbusService) Start() {
 			return
 		}
 
+		log.Debug("dump notification", log.Fields{
+			"notification": n,
+		})
 		if n.Type == 1 {
 			app := n.Body[0].(string)
 			title := n.Body[3].(string)
