@@ -53,22 +53,22 @@ func (s *DbusService) Start() {
 			return
 		}
 		// log.Debug(string(data), nil)
-		hash := fmt.Sprintf("%x", sha1.New().Sum(data))
-		if prevHash == hash {
-			// skip
-			continue
-		}
-		prevHash = hash
 
 		var n notification
 		if err := json.Unmarshal(data, &n); err != nil {
 			log.Error(errors.Wrap(err, "failed unmarshall"), nil)
 			return
 		}
+		s := fmt.Sprintf("%s:%s:%s", n.Body[0].(string), n.Body[3].(string), n.Body[4].(string))
+		hash := fmt.Sprintf("%x", sha1.New().Sum([]byte(s)))
+		if prevHash == hash {
+			// skip
+			continue
+		}
+		prevHash = hash
 
-		log.Debug("dump notification", log.Fields{
-			"notification": n,
-		})
+		log.Debug("dump notification", log.Fields{"notification": n})
+
 		if n.Type == 1 {
 			app := n.Body[0].(string)
 			title := n.Body[3].(string)
