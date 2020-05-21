@@ -3,6 +3,7 @@ lang = "ja-JP"
 speaking_rate = 1.5
 pitch = 1.5
 text_max = 256
+credentials = ""
 
 [log]
 debug = false

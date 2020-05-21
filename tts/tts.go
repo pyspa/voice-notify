@@ -11,6 +11,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/pyspa/voice-notify/log"
 	"github.com/spf13/viper"
+	"google.golang.org/api/option"
 	texttospeechpb "google.golang.org/genproto/googleapis/cloud/texttospeech/v1"
 )
 
@@ -29,7 +30,13 @@ func Speech(ctx context.Context, text string) error {
 		text = string(spText[:max])
 	}
 
-	client, err := texttospeech.NewClient(ctx)
+	opts := make([]option.ClientOption, 0)
+	cred := viper.GetString("speech.credentials")
+	if cred != "" {
+		opts = append(opts, option.WithCredentialsFile(cred))
+	}
+
+	client, err := texttospeech.NewClient(ctx, opts...)
 	if err != nil {
 		return errors.Wrap(err, "failed create client")
 	}
