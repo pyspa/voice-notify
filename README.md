@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/pyspa/voice-notify)
+
 # Voice Notify
 
 Voice-Notify is an application that reports desktop notifications by voice.
