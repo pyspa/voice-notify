@@ -88,6 +88,7 @@ func initConfig() {
 	viper.SetDefault("speech.speaking_rate", 1.5)
 	viper.SetDefault("speech.pitch", 1.5)
 	viper.SetDefault("speech.text_max", 256)
+	viper.SetDefault("speech.play_cmd", "mpg123")
 
 	viper.SetDefault("log.debug", false)
 	viper.SetDefault("log.log", "stderr")
