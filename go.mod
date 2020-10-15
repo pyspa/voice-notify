@@ -7,7 +7,7 @@ require (
 	github.com/godbus/dbus/v5 v5.0.3
 	github.com/gorilla/websocket v1.4.2
 	github.com/pkg/errors v0.9.1
-	github.com/spf13/cobra v1.0.0
+	github.com/spf13/cobra v1.1.0
 	github.com/spf13/viper v1.7.1
 	go.uber.org/zap v1.15.0
 	google.golang.org/api v0.26.0
