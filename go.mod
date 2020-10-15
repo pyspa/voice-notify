@@ -3,7 +3,7 @@ module github.com/pyspa/voice-notify
 go 1.14
 
 require (
-	cloud.google.com/go v0.65.0
+	cloud.google.com/go v0.69.1
 	github.com/godbus/dbus/v5 v5.0.3
 	github.com/gorilla/websocket v1.4.2
 	github.com/pkg/errors v0.9.1
