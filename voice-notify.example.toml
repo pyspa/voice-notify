@@ -4,7 +4,7 @@ speaking_rate = 1.5
 pitch = 1.5
 text_max = 256
 credentials = ""
-play_cmd = "mpg123"
+play_cmd = ["mpg123"]
 
 [log]
 debug = false

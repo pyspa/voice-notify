@@ -85,8 +85,9 @@ func Speech(ctx context.Context, text string) error {
 	if err := ioutil.WriteFile(out.Name(), resp.AudioContent, 0644); err != nil {
 		return errors.Wrap(err, "failed write contents")
 	}
-	cmd := viper.GetString("speech.play_cmd")
-	if err := exec.Command(cmd, out.Name()).Run(); err != nil {
+	cmds := viper.GetStringSlice("speech.play_cmd")
+	cmd, cmds := cmds[0], cmds[1:]
+	if err := exec.Command(cmd, append(cmds, out.Name())...).Run(); err != nil {
 		return errors.Wrap(err, "failed play")
 	}
 
