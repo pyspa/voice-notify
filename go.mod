@@ -11,6 +11,6 @@ require (
 	github.com/spf13/viper v1.7.1
 	go.uber.org/zap v1.16.0
 	google.golang.org/api v0.42.0
-	google.golang.org/genproto v0.0.0-20210323160006-e668133fea6a
+	google.golang.org/genproto v0.0.0-20210611144927-798beca9d670
 	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
 )
