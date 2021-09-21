@@ -59,6 +59,11 @@ func (s *DbusService) Start() {
 			log.Error(errors.Wrap(err, "failed unmarshall"), nil)
 			return
 		}
+		log.Info("dump notification", log.Fields{"notification": n})
+		if len(n.Body) < 5 {
+			// skip
+			continue
+		}
 		s := fmt.Sprintf("%s:%s:%s", n.Body[0].(string), n.Body[3].(string), n.Body[4].(string))
 		hash := fmt.Sprintf("%x", sha1.New().Sum([]byte(s)))
 		if prevHash == hash {
