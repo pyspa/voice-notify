@@ -4,7 +4,7 @@ go 1.14
 
 require (
 	cloud.google.com/go v0.80.0
-	github.com/godbus/dbus/v5 v5.0.3
+	github.com/godbus/dbus/v5 v5.1.0
 	github.com/gorilla/websocket v1.4.2
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cobra v1.1.3
